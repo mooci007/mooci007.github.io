@@ -20,28 +20,32 @@
     var CONFIG = {"hostname":"mooci007.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
+  <meta name="description" content="ubuntu实现免密码登录 在本地创建公钥和私钥  1ssh-keygen -t rsa   可以接-b 2048来指定rsa的位数  **注意:**如果这里选择了输入一个密码,则登录需要输入一个密码,如果让密码为空,则可以进行免密码登录.   2.上传公钥到服务器 有两种方式 方法一:手动操作 12345# 复制到远程服务器scp ~&#x2F;.ssh&#x2F;id_rsa.pub &lt;YOUR SERVE">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Kenshin">
-<meta property="og:url" content="https://mooci007.github.io/index.html">
+<meta property="og:url" content="https://mooci007.github.io/1970/01/01/%E5%85%8D%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95/index.html">
 <meta property="og:site_name" content="Kenshin">
+<meta property="og:description" content="ubuntu实现免密码登录 在本地创建公钥和私钥  1ssh-keygen -t rsa   可以接-b 2048来指定rsa的位数  **注意:**如果这里选择了输入一个密码,则登录需要输入一个密码,如果让密码为空,则可以进行免密码登录.   2.上传公钥到服务器 有两种方式 方法一:手动操作 12345# 复制到远程服务器scp ~&#x2F;.ssh&#x2F;id_rsa.pub &lt;YOUR SERVE">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="1970-01-01T00:00:00.000Z">
+<meta property="article:modified_time" content="2019-11-25T07:05:58.055Z">
 <meta property="article:author" content="Kenshin">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://mooci007.github.io/">
+<link rel="canonical" href="https://mooci007.github.io/1970/01/01/%E5%85%8D%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>Kenshin</title>
+  <title> | Kenshin</title>
   
 
 
@@ -139,169 +143,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://mooci007.github.io/2020/10/04/samba%E9%85%8D%E7%BD%AE/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Kenshin">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kenshin">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/10/04/samba%E9%85%8D%E7%BD%AE/" class="post-title-link" itemprop="url">samba配置</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-10-04 19:46:01 / 修改时间：20:15:06" itemprop="dateCreated datePublished" datetime="2020-10-04T19:46:01+08:00">2020-10-04</time>
-            </span>
-
-          
-
-        </div>
-      </header>
 
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>本文主要讲述了如何在ubuntu18.04下配置samba.</p>
-<h3 id="1-安装samba"><a href="#1-安装samba" class="headerlink" title="1.安装samba:"></a>1.安装<code>samba</code>:</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install samba</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="2-新建目录作为samba的分享目录"><a href="#2-新建目录作为samba的分享目录" class="headerlink" title="2.新建目录作为samba的分享目录"></a>2.新建目录作为samba的分享目录</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /home/kenshin/ShareSMB</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="3-新建用户"><a href="#3-新建用户" class="headerlink" title="3.新建用户"></a>3.新建用户</h3><p>注意:</p>
-<ul>
-<li>我们要知道samba用户必须是<strong>已经存在的系统用户</strong></li>
-<li>samba登录密码是samba的密码,而不是账户本地密码</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 新建系统账户(如果不新建就要用现有的,新账户不需要设置密码)</span></span><br><span class="line">sudo useradd ks</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 设置samba账户密码</span></span><br><span class="line">sudo smbpasswd -a ks</span><br><span class="line">      New SMB password:</span><br><span class="line">      Retype new SMB password:</span><br></pre></td></tr></table></figure>
-
-
-
-<p><code>pdbedit -L</code>可查看samba服务器中已经拥有的用户</p>
-<p><code>smbpasswd -x 用户名</code>可以删除已经存在的用户</p>
-<h3 id="4-配置samba"><a href="#4-配置samba" class="headerlink" title="4. 配置samba:"></a>4. 配置samba:</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 修改配置文件</span></span><br><span class="line">vim /etc/samba/smb.conf</span><br></pre></td></tr></table></figure>
-
-
-
-<pre><code> **在文件最后添加如下代码**
-
- [Share]
-
- comment = Share Files
- path = /home/kenshin/ShareSMB
- public = yes
- browsable=yes
- readonly = no
- writable = yes
- valid users = ks
- create mask = 0666
- directory mask = 0777
- force user = kenshin
- force group = kenshin
- available = yes</code></pre>
-<p>值得注意的是两个mask表示的是新建文件夹的权限,而force则是强制制定用户的所属.</p>
-<p>如果``create mask`为0600, 用ks账户创建一个文件,则本机kenshin账户就不能修改该文件了.为了保证很好的双端同步,建议最好<strong>将force user制定为本机账户名</strong></p>
-<h3 id="etc-samba-smb-conf的具体参数说明"><a href="#etc-samba-smb-conf的具体参数说明" class="headerlink" title="/etc/samba/smb.conf的具体参数说明:"></a>/etc/samba/smb.conf的具体参数说明:</h3><pre><code>      `comment = 任意字符串`
-
- 说明：comment是对该共享的描述，可以是任意字符串。
-
-      `path = 共享目录路径`
-
- 说明：path用来指定共享目录的路径。可以用%u、%m这样的宏来代替路径里的unix用户和客户机的Netbios名，用宏表示主要用于[homes]共享域。例如：如果我们不打算用home段做为客户的共享，而是在/home/share/下为每个Linux用户以他的用户名建个目录，作为他的共享目录，这样path就可以写成：path = /home/share/%u; 。用户在连接到这共享时具体的路径会被他的用户名代替，要注意这个用户名路径一定要存在，否则，客户机在访问时会找不到网络路径。同样，如果我们不是以用户来划分目录，而是以客户机来划分目录，为网络上每台可以访问samba的机器都各自建个以它的netbios名的路径，作为不同机器的共享资源，就可以这样写：path = /home/share/%m 。
-
-      `browseable = yes/no`
-
- 说明：browseable用来指定该共享是否可以浏览。
-
-      `writable = yes/no`
-
- 说明：writable用来指定该共享路径是否可写。
-
-      `available = yes/no`
-
- 说明：available用来指定该共享资源是否可用。
-
-      `admin users = 该共享的管理者`
-
- 说明：admin users用来指定该共享的管理员（对该共享具有完全控制权限）。在samba 3.0中，如果用户验证方式设置成&quot;security=share&quot;时，此项无效。
- 例如：admin users =bobyuan，jane（多个用户中间用逗号隔开）。
-
-      `valid users = 允许访问该共享的用户`
-
- 说明：valid users用来指定允许访问该共享资源的用户。
- 例如：valid users = bobyuan，@bob，@tech（多个用户或者组中间用逗号隔开，如果要加入一个组就用&quot;@+组名&quot;表示。）
-
-      `invalid users = 禁止访问该共享的用户`
-
- 说明：invalid users用来指定不允许访问该共享资源的用户。
- 例如：invalid users = root，@bob（多个用户或者组中间用逗号隔开。）
-
-      `write list = 允许写入该共享的用户`
-
- 说明：write list用来指定可以在该共享下写入文件的用户。
- 例如：write list = bobyuan，@bob
-
-      `public = yes/no`
-
- 说明：public用来指定该共享是否允许guest账户访问。   
-
-      `guest ok = yes/no`
-
- 说明：意义同&quot;public&quot;。</code></pre>
-<h3 id="5-修改共享目录权限"><a href="#5-修改共享目录权限" class="headerlink" title="5. 修改共享目录权限"></a>5. 修改共享目录权限</h3><p>让文件夹的内容可以被访问</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chown 用户 文件夹</span><br><span class="line">也可以使用 `chmod 777 文件夹` 来操作</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="6-重启smbd服务"><a href="#6-重启smbd服务" class="headerlink" title="6. 重启smbd服务"></a>6. 重启smbd服务</h3><p>重启配置文件使配置生效</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service smbd restart</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ol>
-<li>smb<strong>不能进行不同网段的通信</strong>, 可以给台式机的网线连接带无线的交换机或者开无线</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -317,10 +162,9 @@
       <meta itemprop="name" content="Kenshin">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
+        <h1 class="post-title" itemprop="name headline">
           
-            <a href="/1970/01/01/%E5%85%8D%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -350,7 +194,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="ubuntu实现免密码登录"><a href="#ubuntu实现免密码登录" class="headerlink" title="ubuntu实现免密码登录"></a>ubuntu实现免密码登录</h1><ol>
+        <h1 id="ubuntu实现免密码登录"><a href="#ubuntu实现免密码登录" class="headerlink" title="ubuntu实现免密码登录"></a>ubuntu实现免密码登录</h1><ol>
 <li><p>在本地创建公钥和私钥</p>
  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa</span><br></pre></td></tr></table></figure>
 
@@ -375,21 +219,30 @@
 
 <p>修改完成后,可以使用<code>ssh &lt;别名&gt;</code>的方式访问服务器</p>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2020/10/04/samba%E9%85%8D%E7%BD%AE/" rel="next" title="samba配置">
+      samba配置 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
       </footer>
+    
   </article>
   
   
-  
-
-
   
 
 
@@ -442,6 +295,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ubuntu%E5%AE%9E%E7%8E%B0%E5%85%8D%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95"><span class="nav-number">1.</span> <span class="nav-text">ubuntu实现免密码登录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%AB%E5%90%8D%E7%99%BB%E5%BD%95"><span class="nav-number">1.0.1.</span> <span class="nav-text">别名登录</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
